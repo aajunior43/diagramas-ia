@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+:root {
+  --foreground-rgb: 17, 24, 39;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 249, 250, 251;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 243, 244, 246;
+    --background-start-rgb: 17, 24, 39;
+    --background-end-rgb: 31, 41, 55;
+  }
+}
+
+.react-flow__node {
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.react-flow__node.selected {
+  border-color: #3b82f6;
+}
+
+.react-flow__edge-path {
+  stroke: #64748b;
+  stroke-width: 2;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #3b82f6;
+}
+
+.toolbar {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Garantir contraste adequado */
+.text-contrast {
+  color: #1f2937 !important;
+}
+
+.bg-contrast {
+  background-color: #ffffff !important;
+}
+
+/* Modo escuro */
+@media (prefers-color-scheme: dark) {
+  .text-contrast {
+    color: #f3f4f6 !important;
+  }
+  
+  .bg-contrast {
+    background-color: #1f2937 !important;
+  }
+}
+
+/* Garantir que inputs e textareas tenham contraste adequado */
+input, textarea, select {
+  color: #1f2937 !important;
+  background-color: #ffffff !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Garantir contraste em botões */
+button {
+  color: inherit;
+}
+
+/* Garantir que texto em elementos com background gradiente seja visível */
+.bg-gradient-to-r, .bg-gradient-to-br {
+  color: #ffffff;
+}
+
+/* Garantir contraste em elementos de formulário */
+.form-input {
+  color: #1f2937 !important;
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+}
+
+.form-input:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
